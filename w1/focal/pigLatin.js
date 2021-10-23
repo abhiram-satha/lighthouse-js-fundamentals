@@ -2,17 +2,19 @@ const pigLatin = function(word) {
   let latin = [];
   //var ay = '';
   for (let i = 2; i < word.length; i++) {
-    let ay = word[i].splice(0,1)
-    for (j = 0; j < word[i].length; j++) {
-      latin[j] += word[i][j];
+    let words = word[i]
+    let ay = words.shift;
+    //console.log(ay);
+    for (j = 0; j < words.length - 1; j++) {
+      latin[j] += words[j];
     }
-    latin[word[i].length - 1] += ay + "ay";
+    latin[word[i].length] += ay + "ay";
   }
     
   
 
   //let latinWord = latin.join("");
-  return latin;
+  return latin.join();
 }
 
 
