@@ -1,14 +1,15 @@
-const pigLatin = function(word) {
+const pigLatin = function(arr) {
   let latin = [];
-  //var ay = '';
-  for (let i = 2; i < word.length; i++) {
-    let words = word[i]
-    let ay = words.shift;
+  //console.log(arr);
+  
+  for (let i = 0; i < arr.length; i++) {
+    let ay = arr[0][0].shift();
+    console.log(arr);
     //console.log(ay);
-    for (j = 0; j < words.length - 1; j++) {
-      latin[j] += words[j];
+    for (j = 0; j < arr.length[i]; j++) {
+      latin.push(arr[j][i]);
     }
-    latin[word[i].length] += ay + "ay";
+    latin.push(ay + "ay");
   }
     
   
@@ -17,9 +18,8 @@ const pigLatin = function(word) {
   return latin.join();
 }
 
+var lets = process.argv;
+const toTranslate = lets.slice(2 , process.argv.length);
 
 
-
-
-
-console.log(pigLatin(process.argv))
+console.log(pigLatin(toTranslate))
